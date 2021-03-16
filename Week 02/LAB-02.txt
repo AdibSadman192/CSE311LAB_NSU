@@ -1,0 +1,18 @@
+1. Write a query that displays the last name , weekly salary, department number of the
+employees. Name the salary column as "Weekly Salary".
+
+Ans:
+
+select Last_Name,
+Salary/4 AS Weekly_Salary,
+Department_ID from employees;
+
+
+
+2. Write a query that displays the last name concatenated with the job ID, separated by a
+comma and space, and name the column Employee and Title.
+
+Ans: 
+
+select CONCAT (Last_name, " , ",Job_Id) AS "Employee and Title" 
+from employees;
