@@ -1,3 +1,5 @@
 # CSE311LAB_NSU
-The is the repository of lab work of CSE311 in NSU.
-SPRING2021
+The is the repository of CSE311.
+
+
+Semester: SPRING2021
