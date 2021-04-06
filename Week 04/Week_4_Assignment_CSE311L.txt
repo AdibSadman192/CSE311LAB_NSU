@@ -1,0 +1,72 @@
+Lecture 01:Week 04
+
+Activity 01:
+Write a query to display the last name, department number, and department name for employees.
+
+Ans: 
+
+SELECT e.Last_Name, e.Department_ID, d.Department_Name 
+ FROM employees e, departments d 
+ WHERE e.Department_ID = d.Department_ID;
+ 
+ 
+Activity 02:
+Write a query to display the employee last name, department name, location ID, and city of
+employees who earn a commission.
+
+
+Ans:
+
+SELECT e.Last_Name, d.Department_Name, d.Location_ID, l.city FROM employees e, departments d, locations l
+WHERE e.Department_ID = d.Department_ID
+AND d.Location_ID = l.Location_ID
+AND e.Commission_pct IS NOT NULL;
+
+
+
+
+Lecture 02: Week 04
+
+
+Activity 01:
+Write a query to display the last name, job title, department number, and department name for all
+employees who work in Toronto, and return the employees data also who doesn’t have a Job ID.
+
+
+Ans: 
+
+SELECT e.Last_Name, e.Job_Id, e.Department_Id, d.Department_Name
+FROM employees e
+JOIN departments d 
+ON (e.Department_Id = d.Department_Id)
+JOIN locations l 
+ON (d.Location_id = l.Location_Id)
+AND l.City = "Toronto"
+
+
+Activity 02:
+Write a query to display the employee last name, department name, location ID, and city of
+employees who earn a commission. Return the employees last name also even if there exist no data
+related to department and location. Sort data in descending order of salary and commissions.
+
+Ans: 
+
+SELECT e.last_name, d.Department_Name, d.Location_id, l.City
+FROM employees e
+LEFT JOIN departments d
+ON (e.Department_Id = d.Department_id)
+LEFT JOIN locations l
+ON (d.Location_id = l.Location_id)
+WHERE e.Commission_pct IS NOT NULL
+ORDER BY Salary DESC, Commission_pct DESC
+
+
+Activity 03:
+Display the employee last name and employee number of each and every employee along with
+their manager’s last name and manager number. Label the columns Employee, Emp#, Manager,
+and Mgr#, respectively. (Output of first few rows are provided)
+
+Ans: 
+SELECT w.Last_Name "Employee", w.Employee_ID "EMP#", m.Last_Name "Manager", m.Employee_ID "Mgr#"
+FROM employees w join employees m
+ON (w.Manager_ID = m.Employee_ID)
