@@ -42,6 +42,7 @@ ON (e.Department_Id = d.Department_Id)
 JOIN locations l 
 ON (d.Location_id = l.Location_Id)
 AND l.City = "Toronto"
+OR e.Job_Id IS NULL
 
 
 Activity 02:
