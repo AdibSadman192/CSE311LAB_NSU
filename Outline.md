@@ -1,4 +1,6 @@
 GENERAL OVERVIEW
+
+
 The lab course aims to make students able to apply their knowledge in developing and using relational databases. The labs cover efficient use of SQL for complicated tasks and teach a database language. The main topics of the laboratory applications are: SQL Queries (both simple & advanced), use of triggers, stored procedures and functions for efficient and more secure implementations of database applications. Upon completion of the course, the students learn how to design and develop database applications using one of the major DBMSs.
 
 These labs are not just for students who require extra help; they are an integral part of the course and attendance is mandatory. 
@@ -16,6 +18,8 @@ Week: ONE
 Introduction
 
 
+
+
 Project: Group Formation
 Part A
 Create database tables
@@ -27,8 +31,12 @@ Insert rows into the created table
 Create Department Table
 Execute a basic SELECT statement
 
+
+
 Week: TWO
 Getting familiar with queries
+
+
 
 
 Project: Brief on Project
@@ -58,6 +66,8 @@ Using the NULL Conditions
 Logical Conditions
 
 
+
+
 Project proposal submission deadline 2/
 Week: FOUR
 Displaying Data from Multiple Tables
@@ -75,6 +85,8 @@ FULL OUTER JOIN
 Additional Conditions
 
 
+
+
 Project:  Requirements Analysis, Features & Relationships 2
 Week: FIVE
 Aggregating Data Using Group Functions
@@ -89,6 +101,8 @@ Using the GROUP BY Clause on Multiple Columns
 Illegal Queries Using Group Functions
 Excluding Group Results: The HAVING Clause
 Nesting Group Functions
+
+
 
 
 Project: Submission of ER Diagram & Relations Discussion Su2
