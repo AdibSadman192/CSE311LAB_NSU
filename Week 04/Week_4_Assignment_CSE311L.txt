@@ -35,10 +35,12 @@ employees who work in Toronto, and return the employees data also who doesn’t 
 
 Ans: 
 
-SELECT e.Last_Name, e.Job_Id, e.Department_Id, d.Department_Name
+SELECT e.Last_Name, j.Job_Title, e.Department_Id, d.Department_Name
 FROM employees e
 JOIN departments d 
 ON (e.Department_Id = d.Department_Id)
+JOIN jobs j
+ON (e.Job_Id = j.job_id)
 JOIN locations l 
 ON (d.Location_id = l.Location_Id)
 AND l.City = "Toronto"
