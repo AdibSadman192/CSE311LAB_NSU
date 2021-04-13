@@ -1,0 +1,68 @@
+Activity 01:
+Display the highest, lowest, sum, and average salary of all employees. Label the columns Maximum,
+Minimum, Sum, and Average, respectively. Round your results to the nearest whole number.
+
+Ans:
+
+SELECT
+ROUND(MAX(Salary),0) "Maximum",
+ROUND(MIN(Salary),0) "Minimum",
+ROUND(SUM(Salary),0) "Sum",
+ROUND(AVG(Salary),0) "Average"
+FROM employees;
+
+Activity 02:
+Display the minimum, maximum, sum, and average salary for each job type
+
+Ans:
+
+SELECT Job_ID,
+ROUND(MAX(salary),0) "Maximum",
+ROUND(MIN(salary),0) "Minimum",
+ROUND(SUM(salary),0) "Sum",
+ROUND(AVG(salary),0) "Average"
+FROM employees
+GROUP BY Job_ID;
+
+
+Lecture 02:
+
+Activity 01:
+Write a query to display the number of people with the same job.
+
+Ans:
+
+
+SELECT Job_ID, COUNT(*)
+FROM employees
+GROUP BY Job_ID;
+
+
+Activity 02:
+Display the manager number and the salary of the lowest paid employee for that manager. Exclude anyone
+whose manager is not known. Exclude any groups where the minimum salary is $6,000 or less. Sort the output
+in descending order of salary.
+
+
+Ans:
+
+SELECT Manager_ID, MIN(Salary)
+FROM employees
+WHERE Manager_ID IS NOT NULL
+GROUP BY Manager_ID HAVING MIN(Salary) > 6000
+ORDER BY MIN(Salary) DESC;
+
+
+Homework:
+Write a query to display each department’s name, location (Name of the City), number of employees, and the
+average salary for all employees in that department. Label the columns Name, Location, Number of People,
+and Salary, respectively. Round the average salary to two decimal places.
+
+Ans:
+
+SELECT d.Department_Name as "Name", l.City as "Location", COUNT(*) "Number of People",
+ ROUND(AVG(Salary),2)
+ "Salary" FROM employees e, departments d, locations l
+ WHERE e.Department_ID = d.Department_ID 
+AND d.Location_ID=l.Location_ID 
+GROUP BY d.Department_Name, d.Location_ID;
